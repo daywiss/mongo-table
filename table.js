@@ -47,6 +47,11 @@ module.exports = async (db,schema) =>{
         _id: id
       })
   }
+
+  async function getAll(ids=[]){
+    return col.find({_id:{$in:ids}}).toArray()
+  }
+
   async function has(id){
     const result = await col.findOne({_id:id},{projection:{'_id':1}})
     return result ? true : false
@@ -61,6 +66,7 @@ module.exports = async (db,schema) =>{
     return set(undefined,props,opts)
   }
   async function update(props,opts={upsert:true}){
+    assert(props._id,'requires _id')
     await col.updateOne({_id:props._id}, {$set:props}, opts)
     return props
   }
@@ -119,5 +125,6 @@ module.exports = async (db,schema) =>{
   return {
     set,get,getBy,has,delete:del,streamify,count,drop,insertMany,query,list,
     readStream,deleteAll,collection:query,close,insert,upsert,update,db:()=>db,
+    getAll,
   }
 }

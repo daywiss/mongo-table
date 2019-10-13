@@ -49,25 +49,55 @@ for additional options.
 ```
 
 ### async get(id) => doc
+Get a single document
+
 ### async set(id,doc) =>doc
+Set a single document (upsert)
+
 ### async has(id) => boolean
+Check if a document exists by id
+
 ### async delete(id) => {_id:string}
+Delete single document
 
 ### async upsert(doc) => doc
-### async update(doc) => doc
-### async insert(doc) => doc
+Upsert (update or create if does not exist) document. Assigns id if not provided.
 
-### async getBy(ids:[]) => doc[]
+### async update(doc) => doc
+Update an existing document, requires an _id.
+
+### async insert(doc) => doc
+Insert a new document.
+
+### async getBy(query) => doc[]
+Get documents by filtering properties. Uses indexes if they exist. Same as col.find(query).
+
+### async getAll(ids:[]) => doc[]
+Get documents by array of _ids.
+
 ### async deleteAll(ids:[]) => {_id:string}[]
+Delete documents by an array of ids.
+
 ### async insertMany(docs:[]) => doc[]
-### async list => collection[]
+Insert many documents by array of ids. Requres _id on each document.
+
+### async list => doc[]
+List all documents in collection as an array.
 
 ### async drop() => undefined
+Drop documents from collection.
+
 ### async close() => undefined
+Close Database connection. All collections on this connection will be affectect.
 
 ### readStream(query:object) => highland:cursor
+Read mongo query as a node compatible stream.
+
 ### db() => database
+Get the underlying Mongo database object.
+
 ### collection() => collection
+Get the underlying Mongo collection.
 
 
 
