@@ -13,7 +13,7 @@ If you just want to connect to the db use: `const DB = require('mongo-table/db')
 
 ### Init
 Initializes through mongo uri and passes through options to the standard mongo driver.
-(https://mongodb.github.io/node-mongodb-native/3.3/api/MongoClient.html#.connect)[Mongo Connection Docs].
+[Mongo Connection Docs](https://mongodb.github.io/node-mongodb-native/3.3/api/MongoClient.html#.connect).
 
 ```js
 
@@ -34,7 +34,7 @@ require('mongo-table')({
 ```
 ### Schema
 Theres a really basic schema object which you can pass to the table to initialize indices
-and other collection options. See (https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html)[Mongo Collection Options]
+and other collection options. See [Mongo Collection Options](https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html)
 for additional options.
 
 ```
