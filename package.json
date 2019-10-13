@@ -1,0 +1,17 @@
+{
+  "name": "mongo-table",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.7.0",
+    "highland": "^2.13.5",
+    "lodash": "^4.17.15",
+    "mongodb": "^3.3.2",
+    "saslprep": "^1.0.3"
+  },
+  "devDependencies": {
+    "dotenv": "^8.1.0",
+    "tape": "^4.11.0"
+  }
+}
